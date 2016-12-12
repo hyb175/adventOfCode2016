@@ -13,8 +13,8 @@ func readFile(path: String) -> String {
 let file = readFile(path: "./input/day2")
 
 let keypad = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-var indices = (1, 1)
 func part1(lines: [String]) -> String {
+  var indices = (1, 1)
   var output = ""
   for line in lines {
     line.characters.forEach { char in
@@ -47,8 +47,7 @@ let keypad2 = [
   ["", "", "D", "", ""],
 ]
 func part2(lines: [String]) -> String {
-  print(keypad2[indices.0])
-  print("Current position is \(keypad2[indices.0][indices.1])")
+  var indices = (2, 0)
   var output = ""
   for line in lines {
     line.characters.forEach { char in
@@ -79,6 +78,5 @@ func part2(lines: [String]) -> String {
 
 let lines:[String] = file.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
 print("Answer for part1: \(part1(lines: lines))")
-indices = (2, 0)
 print("Answer for part2: \(part2(lines: lines))")
 
