@@ -13,6 +13,8 @@ if let dayNum: Int =  Int(arguments[1]) {
     day = Day4()
   case 5:
     day = Day5()
+  case 6:
+    day = Day6()
   default:
     day = Day()
   }
