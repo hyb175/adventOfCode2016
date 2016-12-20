@@ -2,8 +2,6 @@ import Foundation
 import Regex
 
 class Day7: Day {
-  // ^(?=.*(\w)(?!\1)(\w)\2\1)(?!.*\[[^]]*(\w)(?!\3)(\w)\4\3)
-
   override func calc() {
     let file = readFile(path: "./input/day7")
     let lines: [String] = file.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
