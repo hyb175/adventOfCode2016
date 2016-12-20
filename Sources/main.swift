@@ -15,6 +15,8 @@ if let dayNum: Int =  Int(arguments[1]) {
     day = Day5()
   case 6:
     day = Day6()
+  case 7:
+    day = Day7()
   default:
     day = Day()
   }
