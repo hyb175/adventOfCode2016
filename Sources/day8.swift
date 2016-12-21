@@ -6,9 +6,21 @@ class Day8: Day {
     let lines: [String] = file.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
 
     print("Answer for part1: \(part1(lines: lines))")
+    print("Answer for part2:")
+    part2(lines: lines)
   }
 
   func part1(lines: [String]) -> Int {
+    return screen(lines: lines).flatMap { $0 }.filter { $0 == 1 }.count
+  }
+
+  func part2(lines: [String]) {
+    for line in screen(lines: lines) {
+      print(String(line.map { $0 == 1 ? "X" : "." }.flatMap { $0 }))
+    }
+  }
+
+  private func screen(lines: [String]) -> [[Int]] {
     var screen = [[Int]](repeating: [Int](repeating: 0, count: 50), count: 6)
     for line in lines {
       let parts = line.components(separatedBy: .whitespaces)
@@ -40,6 +52,7 @@ class Day8: Day {
       default: break
       }
     }
-    return screen.flatMap { $0 }.filter { $0 == 1 }.count
+
+    return screen
   }
 }
